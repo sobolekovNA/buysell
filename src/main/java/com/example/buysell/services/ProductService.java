@@ -23,10 +23,14 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public void saveProduct(Product product, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException {
+    public void saveProduct(Product product,
+                            MultipartFile file1,
+                            MultipartFile file2,
+                            MultipartFile file3) throws IOException {
         Image image1;
         Image image2;
         Image image3;
+
         if (file1.getSize() != 0) {
             image1 = toImageEntity(file1);
             image1.setPreviewImage(true);
@@ -51,7 +55,7 @@ public class ProductService {
     private Image toImageEntity(MultipartFile file)  throws IOException {
         Image image = new Image();
         image.setName(file.getName());
-        image.setOriginalFileName(image.getOriginalFileName());
+        image.setOriginalFileName(file.getOriginalFilename());
         image.setContentType(file.getContentType());
         image.setSize(file.getSize());
         image.setBytes(file.getBytes());
