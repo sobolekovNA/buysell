@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BUYSELL</title>
+    <title>Налетай покупай!</title>
 </head>
 <body>
 <h1>Налетай покупай!</h1>
@@ -15,6 +15,7 @@
 <b>Цена: </b>${product.price}<br>
 <b>Город: </b>${product.city}<br>
 <b>Автор: </b>${product.author}<br>
+<b>Номер телефона: </b>${product.user.phone}<br>
 <hr>
 <h3>Удалить товар</h3>
 <form action="/product/delete/${id}" method="post">
